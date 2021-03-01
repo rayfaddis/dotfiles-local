@@ -1,0 +1,6 @@
+[user]
+  email = ray.faddis@gmail.com
+  name = Ray Faddis
+
+[push]
+  default = current
