@@ -1,5 +1,5 @@
 # general
-# alias ls="ls -la" # user oh-my-zsh ll instead
+# alias ls="ls -la" # use oh-my-zsh ll instead
 alias fix-camera="sudo killall VDCAssistant"
 alias flush-dns="sudo killall -HUP mDNSResponder; sudo killall mDNSResponderHelper; sudo dscacheutil -flushcache"
 

@@ -16,3 +16,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme half-life
 
 antigen apply
+
+export ANDROID_SDK=$HOME/Library/Android/sdk
+export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH

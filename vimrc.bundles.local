@@ -1,0 +1,15 @@
+" themes
+Plug 'rakr/vim-one'
+Plug 'joshdick/onedark.vim'
+Plug 'tomasr/molokai'
+
+" language specific
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sheerun/vim-polyglot'
+
+" interface
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'itchyny/lightline.vim'
+Plug 'ryanoasis/vim-devicons'

@@ -1,0 +1,11 @@
+# mouse support for Mac OS
+set -g mode-mouse on
+set -g mouse-resize-pane on
+set -g mouse-select-pane on
+set -g mouse-select-window on
+
+# add iTerm like shortcut for clearning the pane
+# source: 
+# http://notes.jerzygangi.com/the-only-way-that-actually-works-to-clear-the-screen-in-tmux/
+# NOTE: using Ctrl+l instead
+#bind -n C-k send-keys -R \; send-keys C-l \; clear-history
