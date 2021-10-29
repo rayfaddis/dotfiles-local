@@ -21,4 +21,9 @@ colorscheme onedark
 
 " show whitespace characters
 set list
-" set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,nbsp:␣,lead:·,trail:·,extends:→,precedes:←
+" ,eol:¬
+set showbreak=i↪\
+
+set laststatus=2
+set statusline+=%F

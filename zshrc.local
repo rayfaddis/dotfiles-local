@@ -1,3 +1,5 @@
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 source /usr/local/share/antigen/antigen.zsh
 
 antigen use oh-my-zsh
@@ -19,3 +21,4 @@ antigen apply
 
 export ANDROID_SDK=$HOME/Library/Android/sdk
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
+

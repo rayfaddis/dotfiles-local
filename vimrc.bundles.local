@@ -6,10 +6,30 @@ Plug 'tomasr/molokai'
 " language specific
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
+Plug 'vim-test/vim-test'
+Plug 'mogelbrod/vim-jsonpath'
 
-" interface
-Plug 'lambdalisue/nerdfont.vim'
+" interface - NERDTree
 Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
+
+" interface - editor
+Plug 'itchyny/lightline.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'Yggdroot/indentLine'
+
+" utilities - todos
+" Plug 'folke/todo-comments.nvim'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
+" Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'folke/trouble.nvim'
+
+" utilities - snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+" utlities - git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'Xuyuanp/nerdtree-git-plugin'
