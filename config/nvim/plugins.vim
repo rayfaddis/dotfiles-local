@@ -24,28 +24,18 @@ else
 endif
 
 Plug 'junegunn/fzf.vim'
-Plug 'elixir-lang/vim-elixir'
-Plug 'fatih/vim-go'
 Plug 'janko-m/vim-test'
-Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
-
-if g:has_async
-  Plug 'dense-analysis/ale'
-endif
 
 " themes
 Plug 'rakr/vim-one'
@@ -55,35 +45,40 @@ Plug 'tomasr/molokai'
 " icons
 Plug 'kyazdani42/nvim-web-devicons' " A lua fork of vim-devicons
 
-" language specific
+" language server
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+" language specific
 Plug 'mogelbrod/vim-jsonpath'
 
-" interface - NERDTree
-Plug 'preservim/nerdtree'
-
 " interface - editor
-Plug 'itchyny/lightline.vim'
-Plug 'lambdalisue/nerdfont.vim'
-Plug 'Yggdroot/indentLine'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'akinsho/bufferline.nvim'
+Plug 'famiu/feline.nvim'
+" Plug 'lambdalisue/nerdfont.vim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
-" utilities - todos
+" utilities - todos, snippets & formatting
 Plug 'folke/todo-comments.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'folke/trouble.nvim'
-
-" utilities - snippets
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'windwp/nvim-autopairs'
 
 " utlities - git
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" other
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'folke/trouble.nvim'
 Plug 'vim-test/vim-test'
 
 call plug#end()

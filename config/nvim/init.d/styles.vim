@@ -15,6 +15,7 @@
 "   endif
 " endif
 
+set termguicolors
 colorscheme onedark
 "set background=dark
 "call one#highlight('Normal', '000000', '000000' '')

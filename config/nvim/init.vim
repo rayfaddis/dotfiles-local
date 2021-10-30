@@ -1,8 +1,7 @@
-set encoding=utf-8
-
 " Leader
 let mapleader = " "
 
+" TODO: remove usage of this
 let g:has_async = v:version >= 800 || has('nvim')
 
 set backspace=2   " Backspace deletes like most programs in insert mode
@@ -50,23 +49,6 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile vimrc.local set filetype=vim
 augroup END
 
-" ALE linting events
-augroup ale
-  autocmd!
-
-  if g:has_async
-    autocmd VimEnter *
-      \ set updatetime=1000 |
-      \ let g:ale_lint_on_text_changed = 0
-    autocmd CursorHold * call ale#Queue(0)
-    autocmd CursorHoldI * call ale#Queue(0)
-    autocmd InsertEnter * call ale#Queue(0)
-    autocmd InsertLeave * call ale#Queue(0)
-  else
-    echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
-  endif
-augroup END
-
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
@@ -80,19 +62,19 @@ set expandtab
 " Use one space, not two, after punctuation.
 set nojoinspaces
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in fzf for listing files. Lightning fast and respects .gitignore
-  let $FZF_DEFAULT_COMMAND = 'ag --literal --files-with-matches --nocolor --hidden -g ""'
-
-  if !exists(":Ag")
-    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-    nnoremap \ :Ag<SPACE>
-  endif
-endif
+" " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+" if executable('ag')
+"   " Use Ag over Grep
+"   set grepprg=ag\ --nogroup\ --nocolor
+"
+"   " Use ag in fzf for listing files. Lightning fast and respects .gitignore
+"   let $FZF_DEFAULT_COMMAND = 'ag --literal --files-with-matches --nocolor --hidden -g ""'
+"
+"   if !exists(":Ag")
+"     command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+"     nnoremap \ :Ag<SPACE>
+"   endif
+" endif
 
 " Make it obvious where 80 characters is
 set textwidth=80
@@ -152,10 +134,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Move between linting errors
-nnoremap ]r :ALENextWrap<CR>
-nnoremap [r :ALEPreviousWrap<CR>
-
 " Map Ctrl + p to open fuzzy find (FZF)
 nnoremap <c-p> :Files<cr>
 
@@ -171,4 +149,3 @@ set diffopt+=vertical
 
 " Stitch other configs
 execute 'source ' . stdpath('config') . '/init.d.vim'
-" source $HOME/.nvim/init.d.vim
