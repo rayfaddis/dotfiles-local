@@ -1,3 +1,17 @@
 lua << EOF
-  require('nvim-tree').setup {}
+  local tree_cb = require "nvim-tree.config".nvim_tree_callback
+
+  local list = {
+    { key = "<C-s>", cb = tree_cb("split") },
+  }
+
+  require('nvim-tree').setup {
+    view = {
+      mappings = {
+        list = list
+      }
+    }
+  }
 EOF
+
+nnoremap <leader>k :NvimTreeToggle<CR>

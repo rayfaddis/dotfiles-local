@@ -23,6 +23,7 @@ else
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 endif
 
+" Misc plugins (TODO: review these!)
 Plug 'junegunn/fzf.vim'
 Plug 'janko-m/vim-test'
 Plug 'pbrisbin/vim-mkdir'
@@ -37,44 +38,47 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/tComment'
 
-" themes
+" Themes
 Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
 Plug 'tomasr/molokai'
 
-" icons
+" Icons
 Plug 'kyazdani42/nvim-web-devicons' " A lua fork of vim-devicons
 
-" language server
+" Language server
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 
-" language specific
+" Language specific
 Plug 'mogelbrod/vim-jsonpath'
 
-" interface - editor
+" Interface - editor
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'akinsho/bufferline.nvim'
 Plug 'famiu/feline.nvim'
 " Plug 'lambdalisue/nerdfont.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
-" utilities - todos, snippets & formatting
+" Utilities - todos, snippets & formatting
 Plug 'folke/todo-comments.nvim'
 Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'windwp/nvim-autopairs'
 
-" utlities - git
+" Utlities - git
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" other
+" Other
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'

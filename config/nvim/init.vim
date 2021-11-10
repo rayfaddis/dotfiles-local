@@ -1,24 +1,32 @@
-" Leader
+" Map leader key
 let mapleader = " "
 
-" Misc
+" Disable backups
 set nobackup
 set nowritebackup
 set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+
+" Disable modelines as a security precaution
+set modelines=0
+set nomodeline
+
+" Misc
 set history=50
 set incsearch     " do incremental searching
 set autowrite     " Automatically :write before running commands
-set modelines=0   " Disable modelines as a security precaution
-set nomodeline
+
+" Always use vertical diffs
+set diffopt+=vertical
+
+" Load plugins file and all plugins
+if filereadable(stdpath('config') . '/plugins.vim')
+  execute 'source ' . stdpath('config') . '/plugins.vim'
+endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
-endif
-
-if filereadable(stdpath('config') . '/plugins.vim')
-  execute 'source ' . stdpath('config') . '/plugins.vim'
 endif
 
 filetype plugin indent on
@@ -41,6 +49,7 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile gitconfig.local set filetype=gitconfig
   autocmd BufRead,BufNewFile tmux.conf.local set filetype=tmux
   autocmd BufRead,BufNewFile vimrc.local set filetype=vim
+  autocmd BufRead,BufNewFile *.nvim set filetype=vim
 augroup END
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
@@ -76,17 +85,11 @@ endfunction
 inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
 inoremap <S-Tab> <C-n>
 
-" Run commands that require an interactive shell
-nnoremap <Leader>r :RunInInteractiveShell<Space>
-
 " Treat <li> and <p> tags like the block tags they are
 " let g:html_indent_tags = 'li\|p'
 
 " Set tags for vim-fugitive
 " set tags^=.git/tags
-
-" Map Ctrl + p to open fuzzy find (FZF)
-nnoremap <c-p> :Files<cr>
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
@@ -95,8 +98,8 @@ nnoremap <c-p> :Files<cr>
 " Autocomplete with dictionary words when spell check is on
 " set complete+=kspell
 
-" Always use vertical diffs
-set diffopt+=vertical
+" Run commands that require an interactive shell
+nnoremap <Leader>r :RunInInteractiveShell<Space>
 
 " Stitch other configs
 execute 'source ' . stdpath('config') . '/init.d.vim'

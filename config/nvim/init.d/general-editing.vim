@@ -8,5 +8,3 @@ set expandtab
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
-
-

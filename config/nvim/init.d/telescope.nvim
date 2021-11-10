@@ -1,0 +1,12 @@
+lua << EOF
+  require('telescope').setup {
+    pickers = {
+      find_files = {
+        find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden', '-u' },
+      }
+    }
+  }
+EOF
+
+nnoremap <C-p> <cmd>Telescope find_files<CR>
+nnoremap <C-f> <cmd>Telescope live_grep<CR>
