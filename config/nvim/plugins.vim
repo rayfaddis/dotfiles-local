@@ -2,29 +2,12 @@ if &compatible
   set nocompatible
 end
 
-" Remove declared plugins
-function! s:UnPlug(plug_name)
-  if has_key(g:plugs, a:plug_name)
-    call remove(g:plugs, a:plug_name)
-  endif
-endfunction
-command!  -nargs=1 UnPlug call s:UnPlug(<args>)
-
 call plug#begin(stdpath('data') . '/plugged')
 
 " Define bundles via Github repos
 Plug 'christoomey/vim-run-interactive'
 
-" If fzf has already been installed via Homebrew, use the existing fzf
-" Otherwise, install fzf. The `--all` flag makes fzf accessible outside of vim
-if isdirectory("/usr/local/opt/fzf")
-  Plug '/usr/local/opt/fzf'
-else
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-endif
-
 " Misc plugins (TODO: review these!)
-Plug 'junegunn/fzf.vim'
 Plug 'janko-m/vim-test'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'slim-template/vim-slim'
@@ -47,7 +30,6 @@ Plug 'tomasr/molokai'
 Plug 'kyazdani42/nvim-web-devicons' " A lua fork of vim-devicons
 
 " Language server
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -62,7 +44,8 @@ Plug 'mogelbrod/vim-jsonpath'
 
 " Interface - editor
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'akinsho/bufferline.nvim'
+" Plug 'akinsho/bufferline.nvim'
+Plug 'seblj/nvim-tabline'
 Plug 'famiu/feline.nvim'
 " Plug 'lambdalisue/nerdfont.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -76,12 +59,12 @@ Plug 'windwp/nvim-autopairs'
 " Utlities - git
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-fugitive'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Other
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'folke/trouble.nvim'
 Plug 'vim-test/vim-test'
 
