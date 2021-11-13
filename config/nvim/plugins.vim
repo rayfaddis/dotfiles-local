@@ -41,6 +41,7 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " Language specific
 Plug 'mogelbrod/vim-jsonpath'
+Plug 'ellisonleao/glow.nvim' " Markdown previewer
 
 " Interface - editor
 Plug 'kyazdani42/nvim-tree.lua'
