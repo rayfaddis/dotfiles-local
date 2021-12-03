@@ -2,10 +2,10 @@
 nnoremap <Leader><Leader> <C-^>
 
 " Get off my lawn
-nnoremap <Left> :echoe "Use h instead"<CR>
-nnoremap <Right> :echoe "Use l instead"<CR>
-nnoremap <Up> :echoe "Use k instead"<CR>
-nnoremap <Down> :echoe "Use j instead"<CR>
+" nnoremap <Left> :echoe "Use h instead"<CR>
+" nnoremap <Right> :echoe "Use l instead"<CR>
+" nnoremap <Up> :echoe "Use k instead"<CR>
+" nnoremap <Down> :echoe "Use j instead"<CR>
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow

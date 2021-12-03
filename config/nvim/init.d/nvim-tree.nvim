@@ -15,3 +15,5 @@ lua << EOF
 EOF
 
 nnoremap <leader>k :NvimTreeToggle<CR>
+nnoremap <leader>f :NvimTreeFindFile<CR>
+
